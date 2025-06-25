@@ -24,22 +24,22 @@ type DefaultConfigurationType = {
 }
 
 export const DEFAULT_CONFIGURATION: DefaultConfigurationType = {
-  baseUrl: astroConfig.site || 'https://getcvfolio.com',
+  baseUrl: astroConfig.site || 'https://bintangpassa.com',
   author: {
     avatar,
-    name: 'Javier Diaz Chamorro',
-    headline: 'Engineering and Design',
-    username: 'coderdiaz',
-    location: 'Mexico City',
+    name: 'Bintang Passa',
+    headline: 'Empowering Teams Through Strategic Engineering.',
+    username: 'Engineering Manager at Versafleet',
+    location: 'Jakarta - Indonesia',
     pronouns: 'He/Him',
   },
   seo: {
-    title: 'CV Folio — An Astro template inspired on Read.cv',
-    description: 'Clean and aesthetic portfolio website for developers and designers',
+    title: 'Bintang Passa',
+    description: 'Engineering Manager',
     type: 'website',
     image: MetaDefaultImage,
     twitter: {
-      creator: '@cvfolio'
+      creator: '@bintangpassapersonalweb'
     },
     robots: 'noindex, nofollow',
   }

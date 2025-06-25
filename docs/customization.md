@@ -1,6 +1,6 @@
-# ✏️ Customizing CVfolio
+# ✏️ Customizing bintangpassapersonalweb
 
-This guide walks you through how to customize the CVfolio template to reflect your personal profile, style, and content.
+This guide walks you through how to customize the bintangpassapersonalweb template to reflect your personal profile, style, and content.
 
 ## 📁 Some important files
 
@@ -16,4 +16,4 @@ Here’s an overview of folders relevant to customization:
 | `src/styles/global.css`  | Global CSS and utility styles                             |
 | `src/lib/`               | Utility functions and constants                           |
 
-> You are free to preserve the labels of `Made by CVFolio` from the footer and the floating badge.
+> You are free to preserve the labels of `Made by bintangpassapersonalweb` from the footer and the floating badge.

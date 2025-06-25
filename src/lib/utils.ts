@@ -23,14 +23,30 @@ export const includeDraft = (draft: boolean) => {
   return draft !== true;
 };
 
-export const sortJobsByDate = (jobs: CollectionEntry<'jobs'>[]) => {
-  // Convert "Now" to current year, otherwise returns the year as is
-  const getEndYear = (job: CollectionEntry<'jobs'>) =>
-    job.data.to === 'Now' ? new Date().getFullYear() : job.data.to;
+// export const sortJobsByDate = (jobs: CollectionEntry<'jobs'>[]) => {
+//   // Convert "Now" to current year, otherwise returns the year as is
+//   const getEndYear = (job: CollectionEntry<'jobs'>) =>
+//     job.data.to === 'Now' ? new Date().getFullYear() : job.data.to;
 
-  return jobs.sort((current, next) => {
-    // Compare end years first, then fall back to start years if end years are equal
-    const [currentEnd, nextEnd] = [getEndYear(current), getEndYear(next)];
-    return nextEnd - currentEnd || next.data.from - current.data.from;
+//   return jobs.sort((current, next) => {
+//     // Compare end years first, then fall back to start years if end years are equal
+//     const [currentEnd, nextEnd] = [getEndYear(current), getEndYear(next)];
+//     return nextEnd - currentEnd || next.data.from - current.data.from;
+//   });
+// };
+
+export const sortJobsByDate = (jobs: CollectionEntry<'jobs'>[]) => {
+  return jobs.sort((a, b) => {
+    const aEnd = a.data.to === 'Now' ? new Date() : new Date(`${a.data.to} 1`);
+    const bEnd = b.data.to === 'Now' ? new Date() : new Date(`${b.data.to} 1`);
+
+    if (bEnd.getTime() !== aEnd.getTime()) {
+      return bEnd.getTime() - aEnd.getTime();
+    }
+
+    const aStart = new Date(`${a.data.from} 1`);
+    const bStart = new Date(`${b.data.from} 1`);
+
+    return bStart.getTime() - aStart.getTime();
   });
 };

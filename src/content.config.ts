@@ -42,8 +42,10 @@ const jobCollection = defineCollection({
     title: z.string(),
     company: z.string(),
     location: z.string(),
-    from: z.number(),
-    to: z.number().or(z.enum(['Now'])),
+    from: z.string().regex(/^[A-Za-z]{3} \d{4}$/),
+    to: z.union([z.string().regex(/^[A-Za-z]{3} \d{4}$/),z.literal("Now")]),
+    status: z.string(),
+    logo: z.string(),
     url: z.string(),
   }),
 });

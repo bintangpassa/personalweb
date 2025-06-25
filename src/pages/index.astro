@@ -5,7 +5,7 @@ import Container from '@/components/Container.astro';
 import Author from '@/components/ui/Author.astro';
 import { DEFAULT_CONFIGURATION } from '@/lib/constants';
 import WorkExperience from '@/components/ui/WorkExperience.astro';
-import Talk from '@/components/ui/Talk.astro';
+// import Talk from '@/components/ui/Talk.astro';
 import { sortJobsByDate } from '@/lib/utils';
 
 const entry = await getEntry('pages', 'homepage');
@@ -14,7 +14,7 @@ const { Content } = await render(entry);
 const links = await getCollection('links');
 const jobs = await getCollection('jobs');
 const sortedJobs = sortJobsByDate(jobs);
-const talks = await getCollection('talks');
+// const talks = await getCollection('talks');
 ---
 
 <BaseLayout seo={entry.data.seo}>
@@ -25,7 +25,7 @@ const talks = await getCollection('talks');
   <Container as='section' class='py-6'>
     <div class="flex flex-col gap-6">
       <div class="flex items-center">
-        <span class="text-headings">About</span>
+        <span class="text-2xl text-headings">About</span>
       </div>
       <div class="prose dark:prose-invert">
         <Content />
@@ -36,7 +36,7 @@ const talks = await getCollection('talks');
     links.length > 0 && (
       <Container as='section' class='py-8'>
         <div class="flex flex-col gap-5">
-          <span class="text-headings">Contact</span>
+          <span class="text-2xl text-headings">Contact</span>
           <ul class="flex flex-col gap-3">
             {links.map((link) => (
               <li class="py-0.5">
@@ -64,8 +64,8 @@ const talks = await getCollection('talks');
     sortedJobs.length > 0 && (
       <Container as='section' class='py-6'>
         <div class="flex flex-col gap-5">
-          <span class="text-headings">Work Experience</span>
-          <ul class="flex flex-col gap-8">
+          <span class="text-2xl text-headings">Work Experience</span>
+          <ul class="flex flex-col gap-3">
             {sortedJobs.map((job) => (
               <WorkExperience entry={job} />
             ))}
@@ -74,11 +74,46 @@ const talks = await getCollection('talks');
       </Container>
     )
   }
-  {
+  <Container as='section' class='py-6'>
+    <div class="flex flex-col gap-6">
+      <div class="flex items-center">
+        <span class="text-2xl text-headings">Certification</span>
+      </div>
+      <div class="prose dark:prose-invert">
+        Cloud Service - Huawei Certified ICT Associate
+      </div>
+    </div>
+  </Container>
+  <Container as='section' class='py-6'>
+    <div class="flex flex-col gap-6">
+      <div class="flex items-center">
+        <span class="text-2xl text-headings">Education</span>
+      </div>
+      <div class="prose dark:prose-invert">
+        Telkom University (2012 - 2018). Bandung - Indonesia</br>
+        Thesis: Starfish Soft Robotic using Arduino
+      </div>
+    </div>
+  </Container>
+  <Container as='section' class='py-6'>
+    <div class="flex flex-col gap-6">
+      <div class="flex items-center">
+        <span class="text-2xl text-headings">Interest and Hobby</span>
+      </div>
+      <div class="prose dark:prose-invert">
+        Music Recording and Car Enthusiast 
+      </div>
+    </div>
+  </Container>
+
+
+
+
+  <!-- {
     talks.length > 0 && (
       <Container as='section' class='py-6'>
         <div class="flex flex-col gap-5">
-          <span class="text-headings">Speaking</span>
+          <span class="text-2xl text-headings">Speaking</span>
           <ul class="flex flex-col gap-8">
             {talks.map((talk) => (
               <Talk entry={talk} />
@@ -87,5 +122,5 @@ const talks = await getCollection('talks');
         </div>
       </Container>
     )
-  }
+  } -->
 </BaseLayout>

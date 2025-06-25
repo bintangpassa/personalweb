@@ -1,18 +1,18 @@
-# CVfolio
+# bintangpassapersonalweb
 
-**Welcome to CVfolio!**. CVfolio is an minimalistic and aesthetic Astro template for developers and designers to showcase their professional journey, portfolio, and expertise in a modern, fast-loading website inspired by Read.CV.
+**Welcome to bintangpassapersonalweb!**. bintangpassapersonalweb is an minimalistic and aesthetic Astro template for developers and designers to showcase their professional journey, portfolio, and expertise in a modern, fast-loading website inspired by Read.CV.
 
 The source code is still being worked on, so **it's important to share it** with you so we can get feedback and constantly improve it.
 
 Over time, we've managed to add features and improve the design. There are still some things left to do, but the most important thing is that there's an opportunity for this project to be **community-driven**.
 
-- Telegram group: **[Cvfolio »](https://t.me/+5xVGgQ9aQOk1ZmNh)**
-- Follow us on X at **[@coderdiaz »](https://x.com/coderdiaz)**
+- Telegram group: **[bintangpassapersonalweb »](https://t.me/+5xVGgQ9aQOk1ZmNh)**
+- Follow us on X at **[@bintangpassa »](https://x.com/bintangpassa)**
 - Wish to contribute? Here is how:
 
 ## How to contribute
 
-Cvfolio is built on top of Astro and uses TailwindCSS for generate the website. If you are familiar with Astro, you should feel right at home.
+bintangpassapersonalweb is built on top of Astro and uses TailwindCSS for generate the website. If you are familiar with Astro, you should feel right at home.
 
 In terms of local development, you can use the following requirements:
 
@@ -21,9 +21,9 @@ In terms of local development, you can use the following requirements:
 If you have these requirements, you can start by cloning the repository and installing the dependencies:
 
 ```sh
-git clone https://github.com/coderdiaz-studio/cvfolio.git
+git clone https://github.com/bintangpassa-studio/bintangpassapersonalweb.git
 
-cd cvfolio
+cd bintangpassapersonalweb
 
 git checkout -b feat/your-feature # or fix/your-fix
 ```
@@ -53,11 +53,11 @@ git commit -am "Your commit message"
 git push
 ```
 
-Visit [github.com/coderdiaz-studio/cvfolio/pulls](https://github.com/coderdiaz-studio/cvfolio/pulls) and create a pull request.
+Visit [github.com/bintangpassa-studio/bintangpassapersonalweb/pulls](https://github.com/bintangpassa-studio/bintangpassapersonalweb/pulls) and create a pull request.
 
 ## Check our Documentation
 
-Here is a list of documentation for more in depth information about the cvfolio.
+Here is a list of documentation for more in depth information about the bintangpassapersonalweb.
 
 | Documentation                 | Link                                                                                |
 | ----------------------------- | ----------------------------------------------------------------------------------- |
@@ -67,4 +67,4 @@ Here is a list of documentation for more in depth information about the cvfolio.
 
 Feel free to add more documentation.
 
-If you have any comments or recommendations contact me vía [X](https://x.com/coderdiaz) or email [hey(at)coderdiaz.com](mailto:hey@coderdiaz.com), or write an Issue with your proposal.
+If you have any comments or recommendations contact me vía [X](https://x.com/bintangpassa) or email [hey(at)bintangpassa.com](mailto:hey@bintangpassa.com), or write an Issue with your proposal.
