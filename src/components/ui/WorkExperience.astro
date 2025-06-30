@@ -1,7 +1,8 @@
 ---
 import { render, type CollectionEntry } from 'astro:content';
 import { Image } from 'astro:assets';
-import ExpandableContent from './ExpandableContent.tsx'; // atau sesuaikan path
+import ExpandableContent from './ExpandableContent.tsx';
+import { getDurationInMonths } from '@/lib/utils';
 
 interface Props {
   entry: CollectionEntry<'jobs'>;
@@ -46,7 +47,7 @@ if (!logoMod) {
       <div class="flex flex-col justify-center min-h-12 sm:min-h-14 md:min-h-16">
         <span class="text-headings font-medium">{entry.data.title}</span>
         <span class="text-foreground text-sm">{entry.data.company}</span>
-        <span class="text-foreground text-sm">{entry.data.from} - {entry.data.to}</span>
+        <span class="text-foreground text-sm">{entry.data.from} - {entry.data.to}, {getDurationInMonths(entry.data.from, entry.data.to)}</span>
       </div>
     </div>
     <!-- <div class="prose dark:prose-invert prose-sm">

@@ -5,8 +5,12 @@ import Container from '@/components/Container.astro';
 import Author from '@/components/ui/Author.astro';
 import { DEFAULT_CONFIGURATION } from '@/lib/constants';
 import WorkExperience from '@/components/ui/WorkExperience.astro';
+import { skills } from '@/content/skills'
 // import Talk from '@/components/ui/Talk.astro';
 import { sortJobsByDate } from '@/lib/utils';
+import { Image } from 'astro:assets';
+import huawei from '@/assets/images/huawei_logo.jpg';
+import ExpandableContent from '@/components/ui/ExpandableContent';
 
 const entry = await getEntry('pages', 'homepage');
 const { Content } = await render(entry);
@@ -22,6 +26,7 @@ const sortedJobs = sortJobsByDate(jobs);
     <Author {...DEFAULT_CONFIGURATION.author} />
   </Container>
 
+  <!-- ABOUT SECTION -->
   <Container as='section' class='py-6'>
     <div class="flex flex-col gap-6">
       <div class="flex items-center">
@@ -32,9 +37,11 @@ const sortedJobs = sortJobsByDate(jobs);
       </div>
     </div>
   </Container>
+  
+  <!-- CONTACT SECTION -->
   {
     links.length > 0 && (
-      <Container as='section' class='py-8'>
+      <Container as='section' class='py-3'>
         <div class="flex flex-col gap-5">
           <span class="text-2xl text-headings">Contact</span>
           <ul class="flex flex-col gap-3">
@@ -60,11 +67,153 @@ const sortedJobs = sortJobsByDate(jobs);
       </Container>
     )
   }
+
+  <!-- CERTIFICATION SECTION -->
+  <Container as='section' class='py-6'>
+    <div class="flex flex-col gap-5">
+      <span class="text-2xl text-headings">Certification</span>
+      <ul class="flex flex-col gap-3">
+        <li class="py-0.5">
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-4">
+              {huawei ? (
+                <Image
+                  src={huawei}
+                  alt={`Huawei logo`}
+                  width={96}
+                  height={96}
+                  class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain rounded"
+                />
+              ) : (
+                <div class="w-12 h-12 rounded bg-gray-200 dark:bg-gray-700" />
+              )}
+              <div class="flex flex-col justify-center min-h-12 sm:min-h-14 md:min-h-16">
+                <span class="text-headings font-medium">Cloud Service - Huawei Certified ICT Associate</span>
+                <span class="text-foreground text-sm">Issued Apr 2021 · Expired Apr 2024</span>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </Container>
+
+  <!-- TECH STACK SECTION -->
+  <Container as="section" class="py-6">
+    <h2 class="text-2xl text-headings mb-4">Skills</h2> 
+    <div class="flex flex-col">
+      <ExpandableContent className="" maxHeight="25rem" client:visible >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="text-lg font-medium mb-2">People & Project Leadership</h3>
+            <ul class="list-disc list-inside text-sm text-foreground">
+              <li>Engineering team leadership (4–6 people)</li>
+              <li>Project delivery & stakeholder communication</li>
+              <li>Agile/Scrum facilitation & sprint planning</li>
+              <li>Cross-functional collaboration (design, product, QA, marketing, CX)</li>
+              <li>Mentoring & career growth support</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-medium mb-2">Integrations & API Experiences</h3>
+            <ul class="list-disc list-inside text-sm text-foreground">
+              <li>REST / XML Integrations, ERP Integrations</li>
+              <li>Payment gateways, Logistics and GPS Tracking APIs</li>
+              <li>Gemini AI, AI Agents, Custom guardrails implementation</li>
+              <li>Other third-party services (Google Maps, etc.)</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-medium mb-2">Programming Languages & Frameworks</h3>
+            <ul class="list-disc list-inside text-sm text-foreground">
+              <li>PHP (Laravel, CodeIgniter, Zend)</li>
+              <li>JavaScript, Python, Node.js</li>
+              <li>Ruby on Rails</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-medium mb-2">Frontend Technologies</h3>
+            <ul class="list-disc list-inside text-sm text-foreground">
+              <li>HTML, CSS, JavaScript</li>
+              <li>React Native, Expo Go</li>
+              <li>Responsive Design</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-medium mb-2">Backend & System Architecture</h3>
+            <ul class="list-disc list-inside text-sm text-foreground">
+              <li>Microservices, RESTFUL API</li>
+              <li>Redis, Docker</li>
+              <li>Ubuntu Server, Nginx, Apache</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-medium mb-2">Databases</h3>
+            <ul class="list-disc list-inside text-sm text-foreground">
+              <li>MySQL</li>
+              <li>PostgreSQL</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-medium mb-2">Cloud & DevOps</h3>
+            <ul class="list-disc list-inside text-sm text-foreground">
+              <li>AWS, Huawei Cloud, Alibaba Cloud</li>
+              <li>CI/CD pipelines, Git, Docker, Postman</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-medium mb-2">Monitoring & Observability</h3>
+            <ul class="list-disc list-inside text-sm text-foreground">
+              <li>Sentry, Datadog</li>
+              <li>Logging and alerting best practices</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-medium mb-2">Tools & Project Management</h3>
+            <ul class="list-disc list-inside text-sm text-foreground">
+              <li>Jira, GitHub, GitLab</li>
+              <li>Agile/Scrum</li>
+              <li>ISO 27001 implementation</li>
+            </ul>
+          </div>
+        </div>
+      </ExpandableContent>
+    </div>
+  </Container>
+
+  <!-- SKILL SECTION -->
+  <!-- <Container as='section' class='py-6'>
+    <h2 class="text-2xl text-headings mb-4">Skills</h2>
+    <div class="flex flex-col">
+      <ExpandableContent className="" maxHeight="6rem" client:visible >
+      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {skills.map(skill => (
+          <div class="bg-white dark:bg-gray-800 rounded shadow p-4">
+            <h3 class="font-semibold mb-2">{skill.name}</h3>
+            <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded">
+              <div class="h-2 bg-blue-800 dark:bg-gray-200 rounded" style={`width: ${skill.level}%`}></div>
+            </div>
+          </div>
+        ))}
+      </div>
+      </ExpandableContent>
+    </div>
+  </Container> -->
+
+  <!-- WORKING EXPERIENCE SECTION -->
   {
     sortedJobs.length > 0 && (
       <Container as='section' class='py-6'>
         <div class="flex flex-col gap-5">
-          <span class="text-2xl text-headings">Work Experience</span>
+          <span class="text-2xl text-headings">Work Experiences</span>
           <ul class="flex flex-col gap-3">
             {sortedJobs.map((job) => (
               <WorkExperience entry={job} />
@@ -74,16 +223,8 @@ const sortedJobs = sortJobsByDate(jobs);
       </Container>
     )
   }
-  <Container as='section' class='py-6'>
-    <div class="flex flex-col gap-6">
-      <div class="flex items-center">
-        <span class="text-2xl text-headings">Certification</span>
-      </div>
-      <div class="prose dark:prose-invert">
-        Cloud Service - Huawei Certified ICT Associate
-      </div>
-    </div>
-  </Container>
+
+  <!-- EDUCATION SECTION -->
   <Container as='section' class='py-6'>
     <div class="flex flex-col gap-6">
       <div class="flex items-center">
@@ -95,20 +236,20 @@ const sortedJobs = sortJobsByDate(jobs);
       </div>
     </div>
   </Container>
+
+  <!-- INTEREST AND HOBBY SECTION -->
   <Container as='section' class='py-6'>
     <div class="flex flex-col gap-6">
       <div class="flex items-center">
         <span class="text-2xl text-headings">Interest and Hobby</span>
       </div>
       <div class="prose dark:prose-invert">
-        Music Recording and Car Enthusiast 
+        Music, Car Mods / Tuning and Golf 
       </div>
     </div>
   </Container>
 
-
-
-
+  <!-- TALKS SECTION -->
   <!-- {
     talks.length > 0 && (
       <Container as='section' class='py-6'>

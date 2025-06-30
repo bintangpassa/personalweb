@@ -50,3 +50,25 @@ export const sortJobsByDate = (jobs: CollectionEntry<'jobs'>[]) => {
     return bStart.getTime() - aStart.getTime();
   });
 };
+
+export const getDurationInMonths = (from: string, to?: string): string => {
+  const fromDate = new Date(`${from}-01`);
+  const toDate = to === 'Now' || !to ? new Date() : new Date(`${to}-01`);
+
+  let years = toDate.getFullYear() - fromDate.getFullYear();
+  let months = toDate.getMonth() - fromDate.getMonth();
+
+  if (months < 0) {
+    years -= 1;
+    months += 12;
+  }
+
+  const totalMonths = years * 12 + months + 1; // +1 for inclusive counting
+  const resultYears = Math.floor(totalMonths / 12);
+  const resultMonths = totalMonths % 12;
+
+  const yearLabel = resultYears > 0 ? `${resultYears} year${resultYears > 1 ? 's' : ''}` : '';
+  const monthLabel = resultMonths > 0 ? `${resultMonths} month${resultMonths > 1 ? 's' : ''}` : '';
+
+  return [yearLabel, monthLabel].filter(Boolean).join(' ');
+};
