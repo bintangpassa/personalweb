@@ -32,7 +32,7 @@ export default function ExpandableContent({
       </div>
       <button
         type="button"
-        className="mt-2 text-sm"
+        className="mt-2 text-sm print:hidden"
         onClick={() => setExpanded(!expanded)}
       >
         {expanded ? 'Show less' : 'Show more'}

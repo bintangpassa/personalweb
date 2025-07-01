@@ -41,7 +41,7 @@ const sortedJobs = sortJobsByDate(jobs);
   <!-- CONTACT SECTION -->
   {
     links.length > 0 && (
-      <Container as='section' class='py-3'>
+      <Container as='section' class='py-3 break-inside-avoid'>
         <div class="flex flex-col gap-5">
           <span class="text-2xl text-headings">Contact</span>
           <ul class="flex flex-col gap-3">
@@ -118,7 +118,7 @@ const sortedJobs = sortJobsByDate(jobs);
           <div>
             <h3 class="text-lg font-medium mb-2">Integrations & API Experiences</h3>
             <ul class="list-disc list-inside text-sm text-foreground">
-              <li>REST / XML Integrations, ERP Integrations</li>
+              <li>REST, JSON, XML, ERP Integrations</li>
               <li>Payment gateways, Logistics and GPS Tracking APIs</li>
               <li>Gemini AI, AI Agents, Custom guardrails implementation</li>
               <li>Other third-party services (Google Maps, etc.)</li>
@@ -126,11 +126,11 @@ const sortedJobs = sortJobsByDate(jobs);
           </div>
 
           <div>
-            <h3 class="text-lg font-medium mb-2">Programming Languages & Frameworks</h3>
+            <h3 class="text-lg font-medium mb-2">Programming</h3>
             <ul class="list-disc list-inside text-sm text-foreground">
               <li>PHP (Laravel, CodeIgniter, Zend)</li>
               <li>JavaScript, Python, Node.js</li>
-              <li>Ruby on Rails</li>
+              <li>MVC, Ruby on Rails</li>
             </ul>
           </div>
 
@@ -139,7 +139,7 @@ const sortedJobs = sortJobsByDate(jobs);
             <ul class="list-disc list-inside text-sm text-foreground">
               <li>HTML, CSS, JavaScript</li>
               <li>React Native, Expo Go</li>
-              <li>Responsive Design</li>
+              <li>Responsive Design (Mobile)</li>
             </ul>
           </div>
 
@@ -177,13 +177,30 @@ const sortedJobs = sortJobsByDate(jobs);
           </div>
 
           <div>
+            <h3 class="text-lg font-medium mb-2">Other</h3>
+            <ul class="list-disc list-inside text-sm text-foreground">
+              <li>Vehicle Routing Problem (VRP) concept and algorithms</li>
+              <li>Matrix Distance Computation (OSRM)</li>
+              <li>Lazy Loading & Code Splitting (Frontend Performance)</li>
+              <li>Load Balancing, Caching Strategies</li>
+              <li>Vertical & Horizontal Scaling</li>
+              <li>Time Complexity Optimization (Big-O analysis)</li>
+              <li>Retry with Delay / Exponential Backoff</li>
+              <li>Batch Job Scheduling (daily, hourly, cron-based)</li>
+            </ul>
+          </div>
+
+          <div>
             <h3 class="text-lg font-medium mb-2">Tools & Project Management</h3>
             <ul class="list-disc list-inside text-sm text-foreground">
-              <li>Jira, GitHub, GitLab</li>
+              <li>Jira, GitHub, BItbucket</li>
               <li>Agile/Scrum</li>
               <li>ISO 27001 implementation</li>
             </ul>
           </div>
+        </div>
+        <div class="text-sm text-muted-foreground italic mt-3">
+          Notes: This list summarizes my primary experience, but I don’t limit myself to specific stacks. I focus on solving problems efficiently and adapting to the context.
         </div>
       </ExpandableContent>
     </div>
@@ -211,7 +228,7 @@ const sortedJobs = sortJobsByDate(jobs);
   <!-- WORKING EXPERIENCE SECTION -->
   {
     sortedJobs.length > 0 && (
-      <Container as='section' class='py-6'>
+      <Container as='section' class='py-6 break-inside-avoid'>
         <div class="flex flex-col gap-5">
           <span class="text-2xl text-headings">Work Experiences</span>
           <ul class="flex flex-col gap-3">
@@ -225,8 +242,8 @@ const sortedJobs = sortJobsByDate(jobs);
   }
 
   <!-- EDUCATION SECTION -->
-  <Container as='section' class='py-6'>
-    <div class="flex flex-col gap-6">
+  <Container as='section' class='py-4'>
+    <div class="flex flex-col gap-4">
       <div class="flex items-center">
         <span class="text-2xl text-headings">Education</span>
       </div>
@@ -238,8 +255,8 @@ const sortedJobs = sortJobsByDate(jobs);
   </Container>
 
   <!-- INTEREST AND HOBBY SECTION -->
-  <Container as='section' class='py-6'>
-    <div class="flex flex-col gap-6">
+  <Container as='section' class='py-4'>
+    <div class="flex flex-col gap-4">
       <div class="flex items-center">
         <span class="text-2xl text-headings">Interest and Hobby</span>
       </div>
