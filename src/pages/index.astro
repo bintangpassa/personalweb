@@ -10,6 +10,7 @@ import { skills } from '@/content/skills'
 import { sortJobsByDate } from '@/lib/utils';
 import { Image } from 'astro:assets';
 import huawei from '@/assets/images/huawei_logo.jpg';
+import telu from '@/assets/images/telkom_university_logo.jpg';
 import ExpandableContent from '@/components/ui/ExpandableContent';
 
 const entry = await getEntry('pages', 'homepage');
@@ -140,6 +141,7 @@ const sortedJobs = sortJobsByDate(jobs);
               <li>HTML, CSS, JavaScript</li>
               <li>React Native, Expo Go</li>
               <li>Responsive Design (Mobile)</li>
+              <li>Jamstack Technology</li>
             </ul>
           </div>
 
@@ -147,7 +149,7 @@ const sortedJobs = sortJobsByDate(jobs);
             <h3 class="text-lg font-medium mb-2">Backend & System Architecture</h3>
             <ul class="list-disc list-inside text-sm text-foreground">
               <li>Microservices, RESTFUL API</li>
-              <li>Redis, Docker</li>
+              <li>Redis, Queue, Docker, Kubernetes</li>
               <li>Ubuntu Server, Nginx, Apache</li>
             </ul>
           </div>
@@ -241,21 +243,76 @@ const sortedJobs = sortJobsByDate(jobs);
     )
   }
 
-  <!-- EDUCATION SECTION -->
-  <Container as='section' class='py-4'>
-    <div class="flex flex-col gap-4">
-      <div class="flex items-center">
-        <span class="text-2xl text-headings">Education</span>
-      </div>
-      <div class="prose dark:prose-invert">
-        Telkom University (2012 - 2018). Bandung - Indonesia</br>
-        Thesis: Starfish Soft Robotic using Arduino
-      </div>
+    <!-- EDUCATION SECTION -->
+  <Container as='section' class='py-6'>
+    <div class="flex flex-col gap-5">
+      <span class="text-2xl text-headings">Education</span>
+      <ul class="flex flex-col gap-3">
+        <li class="py-0.5">
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-4">
+              {telu ? (
+                <Image
+                  src={telu}
+                  alt={`Telkom University logo`}
+                  width={96}
+                  height={96}
+                  class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain rounded"
+                />
+              ) : (
+                <div class="w-12 h-12 rounded bg-gray-200 dark:bg-gray-700" />
+              )}
+              <div class="flex flex-col justify-center min-h-12 sm:min-h-14 md:min-h-16">
+                <span class="text-headings font-medium">Telkom University (2012 - 2018). Bandung - Indonesia</span>
+                <span class="text-foreground text-sm">Bachelor's Degree, Informatics Engineering</span>
+                <span class="text-foreground text-sm">Thesis: Starfish Soft Robotic using Arduino</span>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </Container>
+
+     <!-- REFERENCES SECTION -->
+  <Container as='section' class='py-6 hidden print:block break-inside-avoid'>
+    <div class="flex flex-col gap-5">
+      <span class="text-2xl text-headings">References</span>
+      <span class="text-foreground text-sm">All references are available and have given permission to be contacted</span>
+      <ul class="flex flex-col gap-3">
+        <li class="py-0.5">
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-4">
+              <div class="flex flex-col justify-center min-h-12 sm:min-h-14 md:min-h-16">
+                <span class="text-headings font-medium">Paula Paw</span>
+                <span class="text-foreground text-sm">CO-CEO at Versafleet Pte Ltd</span>
+                <a class="text-foreground text-sm" href="https://www.linkedin.com/in/paulapaw/">https://www.linkedin.com/in/paulapaw</a>
+                <span class="text-foreground text-sm">Email: paula@versafleet.co</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="flex flex-col justify-center min-h-12 sm:min-h-14 md:min-h-16">
+                <span class="text-headings font-medium">Shamir Rahim</span>
+                <span class="text-foreground text-sm">Founder of Versafleet Pte Ltd</span>
+                <a class="text-foreground text-sm" href="https://www.linkedin.com/in/shamir">https://www.linkedin.com/in/shamir</a>
+                <span class="text-foreground text-sm">Email: shamir@versafleet.co</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="flex flex-col justify-center min-h-12 sm:min-h-14 md:min-h-16">
+                <span class="text-headings font-medium">Nopriadi Bunawan</span>
+                <span class="text-foreground text-sm">Sr. Director - Commercials and Technology Operations at PT. Papabli Bisnis Semesta</span>
+                <a class="text-foreground text-sm" href="https://www.linkedin.com/in/nopriadi/">https://www.linkedin.com/in/nopriadi</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   </Container>
 
   <!-- INTEREST AND HOBBY SECTION -->
-  <Container as='section' class='py-4'>
+  <!-- <Container as='section' class='py-4'>
     <div class="flex flex-col gap-4">
       <div class="flex items-center">
         <span class="text-2xl text-headings">Interest and Hobby</span>
@@ -264,7 +321,7 @@ const sortedJobs = sortJobsByDate(jobs);
         Music, Car Mods / Tuning and Golf 
       </div>
     </div>
-  </Container>
+  </Container> -->
 
   <!-- TALKS SECTION -->
   <!-- {
