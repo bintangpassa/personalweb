@@ -28,7 +28,7 @@ export const DEFAULT_CONFIGURATION: DefaultConfigurationType = {
   author: {
     avatar,
     name: 'Bintang Passa',
-    headline: 'Empowering Teams Through Strategic Engineering.',
+    headline: 'Software Engineering Manager | SaaS | ISO27001 Compliance | Cloud Service Certified',
     username: 'Engineering Manager at Versafleet',
     location: 'Jakarta - Indonesia',
     pronouns: 'He/Him',
