@@ -27,7 +27,7 @@ export const DEFAULT_CONFIGURATION: DefaultConfigurationType = {
   baseUrl: astroConfig.site || 'https://bintangpassa.com',
   author: {
     avatar,
-    name: 'Bintang Passa',
+    name: 'Bintang Passa Ramadhan',
     headline: 'Software Engineering Manager | SaaS | ISO27001 Compliance | Cloud Service Certified',
     username: 'Engineering Manager at Versafleet',
     location: 'Jakarta - Indonesia',
