@@ -28,7 +28,7 @@ const seoImage = generateAbsoluteUrl(image.src);
   </slot>
   <meta name="generator" content={Astro.generator} />
   <meta name="robots" content={seo?.robots || defaultSeo.robots} />
-  <!-- OpenGraph Meta -->
+  <!-- OpenGraph Meta a -->
   <meta property="og:type" content={seo?.type ?? 'website'} />
   <meta property="og:site_name" content={defaultSeo.title} />
   <meta property="og:title" content={seo?.title || defaultSeo.title} />
